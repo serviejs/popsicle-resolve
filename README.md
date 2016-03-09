@@ -5,7 +5,7 @@
 [![Build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 
-Resolve all Popsicle HTTP request URLs to a common prefix.
+Resolve Popsicle HTTP request URLs against a prefix.
 
 ## Installation
 
@@ -16,10 +16,10 @@ npm install popsicle-resolve --save
 ## Usage
 
 ```javascript
-var request = require('popsicle')
+var popsicle = require('popsicle')
 var resolve = require('popsicle-resolve')
 
-request('/users.json')
+popsicle.request('/users.json')
   .use(resolve('http://example.com'))
   //=> http://example.com/users.json
 ```
