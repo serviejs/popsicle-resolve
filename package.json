@@ -3,6 +3,11 @@
   "version": "0.0.2",
   "description": "Resolve all Popsicle HTTP request URLs to a common prefix",
   "main": "popsicle-resolve.js",
+  "typings": "popsicle-resolve.d.ts",
+  "files": [
+    "popsicle-resolve.js",
+    "popsicle-resolve.d.ts"
+  ],
   "scripts": {
     "lint": "standard",
     "test-spec": "mocha -R spec --bail",

@@ -1,8 +1,8 @@
 var url = require('url')
 
-module.exports = prefixResolve
+module.exports = resolve
 
-function prefixResolve (prefix) {
+function resolve (prefix) {
   return function (request) {
     request.url = url.resolve(prefix, request.url)
   }

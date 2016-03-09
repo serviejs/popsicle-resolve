@@ -24,6 +24,10 @@ popsicle.request('/users.json')
   //=> http://example.com/users.json
 ```
 
+## TypeScript
+
+This project includes a [TypeScript definition](popsicle-resolve.d.ts).
+
 ## License
 
 MIT
