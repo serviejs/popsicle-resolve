@@ -3,35 +3,48 @@
 require('es6-promise').polyfill()
 
 var popsicle = require('popsicle')
+var nock = require('nock')
 var expect = require('chai').expect
 var resolve = require('./')
 
 describe('popsicle resolve', function () {
   it('should resolve absolue paths', function () {
-    var req = popsicle.request('/users')
-      .use(resolve('http://example.com'))
+    nock('http://example.com').get('/users').reply(200)
 
-    expect(req.url).to.equal('http://example.com/users')
+    return popsicle.request('/users')
+      .use(resolve('http://example.com'))
+      .then(res => {
+        expect(res.url).to.equal('http://example.com/users')
+      })
   })
 
   it('should resolve relative paths', function () {
-    var req = popsicle.request('123')
-      .use(resolve('http://example.com/users/456'))
+    nock('http://example.com').get('/users/123').reply(200)
 
-    expect(req.url).to.equal('http://example.com/users/123')
+    return popsicle.request('123')
+      .use(resolve('http://example.com/users/456'))
+      .then(res => {
+        expect(res.url).to.equal('http://example.com/users/123')
+      })
   })
 
   it('should resolve absolute paths to base', function () {
-    var req = popsicle.request('/users')
-      .use(resolve('http://example.com/sub/path'))
+    nock('http://example.com').get('/users').reply(200)
 
-    expect(req.url).to.equal('http://example.com/users')
+    return popsicle.request('/users')
+      .use(resolve('http://example.com/sub/path'))
+      .then(res => {
+        expect(res.url).to.equal('http://example.com/users')
+      })
   })
 
   it('should resolve absolute urls', function () {
-    var req = popsicle.request('http://foo.com/users')
-      .use(resolve('http://example.com'))
+    nock('http://foo.com').get('/users').reply(200)
 
-    expect(req.url).to.equal('http://foo.com/users')
+    return popsicle.request('http://foo.com/users')
+      .use(resolve('http://example.com'))
+      .then(res => {
+        expect(res.url).to.equal('http://foo.com/users')
+      })
   })
 })
