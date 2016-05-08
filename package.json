@@ -1,6 +1,6 @@
 {
   "name": "popsicle-resolve",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Resolve all Popsicle HTTP request URLs to a common prefix",
   "main": "popsicle-resolve.js",
   "typings": "popsicle-resolve.d.ts",
