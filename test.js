@@ -13,7 +13,7 @@ describe('popsicle resolve', function () {
 
     return popsicle.request('/users')
       .use(resolve('http://example.com'))
-      .then(res => {
+      .then(function (res) {
         expect(res.url).to.equal('http://example.com/users')
       })
   })
@@ -23,7 +23,7 @@ describe('popsicle resolve', function () {
 
     return popsicle.request('123')
       .use(resolve('http://example.com/users/456'))
-      .then(res => {
+      .then(function (res) {
         expect(res.url).to.equal('http://example.com/users/123')
       })
   })
@@ -33,7 +33,7 @@ describe('popsicle resolve', function () {
 
     return popsicle.request('/users')
       .use(resolve('http://example.com/sub/path'))
-      .then(res => {
+      .then(function (res) {
         expect(res.url).to.equal('http://example.com/users')
       })
   })
@@ -43,7 +43,7 @@ describe('popsicle resolve', function () {
 
     return popsicle.request('http://foo.com/users')
       .use(resolve('http://example.com'))
-      .then(res => {
+      .then(function (res) {
         expect(res.url).to.equal('http://foo.com/users')
       })
   })
