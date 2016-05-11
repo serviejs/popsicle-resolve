@@ -1,3 +1,3 @@
-declare function resolve (prefix: string): (request: any) => void
+declare function resolve (prefix: string): (req: any, next: () => any) => any;
 
-export = resolve
+export = resolve;
