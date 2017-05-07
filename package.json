@@ -39,7 +39,7 @@
     "istanbul": "^0.4.2",
     "mocha": "^3.0.0",
     "nock": "^9.0.0",
-    "popsicle": "^8.0.0",
-    "standard": "^8.0.0"
+    "popsicle": "^9.1.0",
+    "standard": "^10.0.2"
   }
 }
