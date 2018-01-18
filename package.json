@@ -37,7 +37,7 @@
     "chai": "^4.0.0",
     "es6-promise": "^4.0.0",
     "istanbul": "^0.4.2",
-    "mocha": "^4.0.0",
+    "mocha": "^5.0.0",
     "nock": "^9.0.0",
     "popsicle": "^9.1.0",
     "standard": "^10.0.2"
