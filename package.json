@@ -1,6 +1,6 @@
 {
   "name": "popsicle-resolve",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Resolve all Popsicle HTTP request URLs to a common prefix",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
